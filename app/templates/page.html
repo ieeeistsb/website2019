@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles  %}
+{% load i18n %}
+
+{% block extra_headers %}
+    <link href="{% static "css/page.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/initiatives.css" %}">
+    <link rel="stylesheet" href="{% static "css/newsletters.css" %}">
+    <link rel="stylesheet" href="{% static "css/carousel-communities.css" %}">
+    <link href="{% static "css/board.css" %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+    <div class="image-title" style="background-image: url({% if object.image %}{{ object.image.url }}{% endif %})">
+        <div class="title"><h1>{{ object.name }}</h1></div>
+    </div>
+    {% block page_contents %}
+    {% endblock %}
+
+    {% if object and object.get_news.count != 0 %}
+        <h2 style="text-align: center; font-weight: lighter; margin-top: 80px !important; margin-bottom: 20px;">
+            {% trans "Latest News and Activities of" %} {{ object.name }}
+        </h2>
+        {% include "news.html" with news=object.get_news_latest %}
+        <a id="more_act_news" href="{% url 'search' %}?q={{ object.get_short_name }}">{% trans "Find More" %}</a>
+
+    {% endif %}
+    <div style="margin-bottom: 40px;">
+
+    </div>
+{% endblock %}

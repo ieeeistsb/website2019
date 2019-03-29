@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+
+{% block extra_headers %}
+    <link href="{% static "css/past_boards.css" %}" rel="stylesheet">
+    <script src="{% static "js/modernizr.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="intro-board">
+        <h1 style="text-align: center">{% trans "Lets take a look at our foundations!" %}</h1>
+    </div>
+    <section id="cd-timeline" class="cd-container" style="margin: 5px 40px;">
+
+
+        {% for t in teams %}
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img">
+                <img src="{% static "img/team.png" %}" alt="Picture">
+            </div> <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                {% for m in boards %}
+                    {% if m.team_id == t.id %}
+                <p style="font-size: large; margin-bottom: 0"><b>{{ m.member.name }}</b></p>
+                <p style="font-size: medium; margin-top: 0; margin-bottom: 5px"> - {{ m.role }}</p>
+                    {% endif %}
+                {% endfor %}
+                <span class="cd-date" style="font-size: medium">{{ t }}</span>
+            </div> <!-- cd-timeline-content -->
+        </div> <!-- cd-timeline-block -->
+        {% endfor %}
+
+    </section>
+    <script src="{% static "js/timeline.js" %}"></script>
+{% endblock %}

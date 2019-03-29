@@ -1,0 +1,109 @@
+.image-title-community, .image-title-initiative {
+    padding-top: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+}
+
+.image-title-community {
+    margin-top: -20px;
+    height: 90px;
+    text-align: left;
+    background-color: #2b669a;
+    position: relative;
+}
+
+.image-title-initiative {
+    height: 200px;
+    background-color: #38899a;
+}
+
+.image-title-initiative h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding-top: 75px;
+    font-size: 50px;
+    text-shadow: 2px 2px 2px #222;
+}
+
+.image-title-community a {
+    color: white;
+}
+
+.image-title-community h1 {
+    font-size: 30px;
+    padding-top: 20px;
+    padding-left: 10px;
+    text-shadow: 2px 2px 2px #222;
+}
+
+.image-title-community .fill {
+    background-color: black;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.image-title-community .title {
+    z-index: 10;
+    position: absolute;
+}
+
+.initiative-content {
+    width: 95%;
+    margin: 0 auto 10px;
+}
+
+.initiative-image-nav {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    border-radius: 50%;
+    background-color: #8fb7db;
+    margin: 10px;
+}
+
+a.initive-list-object {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.initive-list {
+    text-align: center;
+    margin: 20px 0;
+    overflow-x: scroll;
+}
+
+a.initive-list-object.active {
+    background-color: #867272;
+}
+
+a.initive-list-object {
+    border-radius: 10%;
+}
+
+a.initive-list-object:hover {
+    box-shadow: 2px 3px 15px 2px rgba(0, 0, 0, 0.47);
+}
+
+a.initive-list-object span {
+    color: #867272;
+    font-size: 20px;
+}
+
+a.initive-list-object.active span {
+    color: white;
+}
+
+.initiative-list-container {
+    display: block;
+    margin: 20px 0px;
+    min-width: 100%;
+}

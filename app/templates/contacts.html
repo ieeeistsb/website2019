@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load load_objects %}
+{% load i18n %}
+
+{% get_branch_socials as social_networks %}
+
+{% block extra_headers %}
+    <link href="{% static "css/board.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="intro-board">
+        <h1>{% trans "Reach us!" %}</h1>
+        <p>{% trans "We are here to answer any questions that you may have. Send us a message using the contacts below!" %}</p>
+    </div>
+
+
+    <div class="row contacts">
+        <div class="col-md-3">
+            <div>
+                <span class="fa fa-envelope"></span>
+            </div>
+            <p align="center">Email</p>
+            <p align="center"><a href="mailto: contact@ieee-ist.org">contact@ieee-ist.org</a></p>
+        </div>
+        {% for social in social_networks %}
+            <div class="col-md-3">
+                <div>
+                    <span class="fa fa-{{ social.name }}"></span>
+                </div>
+                <p align="center">{{ social.name.capitalize }}</p>
+                <p align="center"><a href="{{ social.url }}">{% trans "Follow us!" %}</a></p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="intro-board">
+        <h1>{% trans "Find us!" %}</h1>
+        <p>{% trans "Room 1.5 Instituto Superior Técnico – Taguspark Campus" %} <br>
+            {% trans "Av. Prof. Doutor Cavaco Silva" %}
+            <br> {% trans "2744-016 Porto Salvo, Oeiras Portugal" %}</p>
+    </div>
+
+    <div id="map"></div>
+{% endblock %}

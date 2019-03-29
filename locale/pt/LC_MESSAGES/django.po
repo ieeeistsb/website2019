@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-19 14:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: IEEESite/settings.py:110
+msgid "Portuguese"
+msgstr "Português"
+
+#: IEEESite/settings.py:111
+msgid "English"
+msgstr "Inglês"
+
+#: app/admin.py:13 app/admin.py:16 app/admin.py:19
+msgid "IEEE-IST Student Branch Administration"
+msgstr "Administração IEEE-IST Student Branch"
+
+#: app/templates/about_ieee.html:17
+msgid "What is IEEE?"
+msgstr "O que é o IEEE?"
+
+#: app/templates/about_ieee.html:18
+msgid ""
+"IEEE is the world’s largest professional association dedicated to advancing "
+"<b>technological innovation</b> and excellence for the benefit of humanity."
+msgstr ""
+"IEEE é a maior associação profissional do mundo dedicada ao avanço da "
+"inovação tecnológica para o bem da humanidade."
+
+#: app/templates/about_ieee.html:26
+msgid "Where are we?"
+msgstr "Onde estamos?"
+
+#: app/templates/about_ieee.html:27
+msgid ""
+"We are divided into <b>10 regions worldwide</b>. Each region divided into "
+"<b>sections</b>. Each section has chapters, affinity groups and student "
+"branches."
+msgstr ""
+"Estamos divididos em <b>10 regiões a nível mundial</b>. Cada região está "
+"dividida em secções e cada secção tem <i>chapters</i>, <i>affinity groups</"
+"i> e <i>student branches</i>."
+
+#: app/templates/about_ieee.html:28
+msgid "We are a student branch from <b>Portugal Section</b>."
+msgstr "Somos um student branch da <b>secção portuguesa</b>."
+
+#: app/templates/about_ieee.html:39
+msgid "Why join IEEE?"
+msgstr "Porquê ser membro?"
+
+#: app/templates/about_ieee.html:47
+msgid "Vast number of opportunities to enrich your knowledge."
+msgstr "Oportunidades para enriqueceres o teu conhecimento."
+
+#: app/templates/about_ieee.html:48
+msgid ""
+"IEEE hosts a worldwide network of professionals and experts that can help "
+"shape your career."
+msgstr ""
+"O IEEE é composto por uma rede mundial de profissionais e especialistas que "
+"podem ajudar a lançar-te na tua carreira."
+
+#: app/templates/about_ieee.html:56
+msgid "Access to digital libraries."
+msgstr "Acesso a bibliotecas digitais."
+
+#: app/templates/about_ieee.html:57
+msgid ""
+"IEEEXplore contains the world's highest quality technical literature in "
+"engineering."
+msgstr ""
+"O IEEEXplore contém a literatura técnica com a melhor qualidade do mundo."
+
+#: app/templates/about_ieee.html:65
+msgid "Access to international competitions."
+msgstr "Acesso a competições internacionais."
+
+#: app/templates/about_ieee.html:66
+msgid "Such as IEEEXtreme 24-hour programming competition and IEEE madC."
+msgstr "Como a competição de 24 horas IEEEXtreme e o IEEE madC."
+
+#: app/templates/about_ieee.html:74
+msgid "Develop your soft-skills"
+msgstr "Desenvolve as tuas soft-skills."
+
+#: app/templates/about_ieee.html:75
+msgid ""
+"Organizing events and interacting with others will enhance your "
+"communication skills. "
+msgstr ""
+"Através da organização de eventos e a interação com outras pessoas irás "
+"desenvolver as tuas capacidades de comunicação."
+
+#: app/templates/about_ieee.html:83
+msgid "Opportunity to work in teams."
+msgstr "Oportunidade de desenvolver trabalho em equipa."
+
+#: app/templates/about_ieee.html:84
+msgid "Our activities are organized and planned in teams."
+msgstr "As nossas actividades são planeadas e organizadas em equipas."
+
+#: app/templates/about_ieee.html:92
+msgid "Awards"
+msgstr "Prémios"
+
+#: app/templates/about_ieee.html:99 app/templates/about_ieee.html.py:105
+#: app/templates/about_ieee.html:111
+msgid "IEEE-IST Student Branch Award"
+msgstr "Prémio IEEE-IST Student Branch"
+
+#: app/templates/about_ieee.html:100
+msgid "Region 8 Exemplary Student Branch Award"
+msgstr "Region 8 Exemplary Student Branch Award"
+
+#: app/templates/about_ieee.html:106
+msgid "IEEE-PT Outstanding Student Branch"
+msgstr "IEEE-PT Outstanding Student Branch"
+
+#: app/templates/about_ieee.html:112
+msgid "Darrel Chong Award Bronze Level"
+msgstr "Darrel Chong Award Bronze Level"
+
+#: app/templates/all_news.html:7
+msgid "News and Activities"
+msgstr "Notícias e Actividades"
+
+#: app/templates/all_news.html:14
+msgid "Searching for "
+msgstr "Procura: "
+
+#: app/templates/all_news.html:18
+msgid "Search by tag/content"
+msgstr "Procura por tag/conteúdo"
+
+#: app/templates/base.html:82
+msgid "More sites"
+msgstr "Mais sites"
+
+#: app/templates/base.html:106
+msgid "About us"
+msgstr "Sobre nós"
+
+#: app/templates/base.html:109
+msgid "Board"
+msgstr "Direcção"
+
+#: app/templates/base.html:110
+msgid "Previous boards"
+msgstr "Direcções anteriores"
+
+#: app/templates/base.html:111
+msgid "Contacts"
+msgstr "Contactos"
+
+#: app/templates/base.html:116 app/templates/main.html.py:61
+msgid "Communities"
+msgstr "Comunidades"
+
+#: app/templates/base.html:125
+msgid "Projects & Activities"
+msgstr "Projectos & Actividades"
+
+#: app/templates/board.html:11
+msgid "Meet our awesome board!"
+msgstr "Conhece a nossa equipa!"
+
+#: app/templates/board.html:12
+msgid "We are passioned by engineering and highly motivated to work together."
+msgstr ""
+"Somos apaixonados pela engenharia e estamos motivados para trabalhar juntos."
+
+#: app/templates/communities.html:31
+msgid "Initiatives"
+msgstr "Iniciativas"
+
+#: app/templates/communities.html:48
+msgid "Newsletters"
+msgstr "Newsletters"
+
+#: app/templates/communities.html:50
+msgid "Subscribe to our newsletter"
+msgstr "Subscreve à nossa newsletter"
+
+#: app/templates/communities.html:51
+msgid "here"
+msgstr "aqui"
+
+#: app/templates/communities.html:58
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: app/templates/communities.html:70
+msgid "Photos"
+msgstr "Fotografias"
+
+#: app/templates/communities.html:72
+msgid "Check out our photo gallery."
+msgstr "Visita a nossa galeria de fotografias."
+
+#: app/templates/communities.html:119
+msgid "Vice-Chair"
+msgstr "Vice-Chair"
+
+#: app/templates/contacts.html:15
+msgid "Reach us!"
+msgstr "Contacta-nos!"
+
+#: app/templates/contacts.html:16
+msgid ""
+"We are here to answer any questions that you may have. Send us a message "
+"using the contacts below!"
+msgstr ""
+"Estamos cá para responder a qualquer questão que tenhas. Envia-nos uma "
+"mensagem através dos seguintes contactos!"
+
+#: app/templates/contacts.html:34
+msgid "Follow us!"
+msgstr "Segue-nos!"
+
+#: app/templates/contacts.html:40
+msgid "Find us!"
+msgstr "Vem ter connosco!"
+
+#: app/templates/contacts.html:41
+msgid "Room 1.5 Instituto Superior Técnico – Taguspark Campus"
+msgstr "Sala 1.5 Instituto Superior Técnico – Campus Taguspark"
+
+#: app/templates/contacts.html:42
+msgid "Av. Prof. Doutor Cavaco Silva"
+msgstr "Av. Prof. Doutor Cavaco Silva"
+
+#: app/templates/contacts.html:43
+msgid "2744-016 Porto Salvo, Oeiras Portugal"
+msgstr "2744-016 Porto Salvo, Oeiras Portugal"
+
+#: app/templates/main.html:17
+msgid "Walk..."
+msgstr "Caminha..."
+
+#: app/templates/main.html:18
+msgid "...into the steps of the future"
+msgstr "... na direcção do futuro"
+
+#: app/templates/main.html:31
+msgid "About IEEE-IST"
+msgstr "Sobre IEEE-IST"
+
+#: app/templates/main.html:32
+msgid ""
+"We are an official student branch of IEEE, the biggest professional "
+"organization in the world for engineering."
+msgstr ""
+"Somos um student branch oficial do IEEE, a maior organização de engenharia "
+"do mundo."
+
+#: app/templates/main.html:39
+msgid "Support engineering and help knowledge renewal"
+msgstr "Suportar a engenharia e renovar de conhecimento"
+
+#: app/templates/main.html:45
+msgid "Implement ideas"
+msgstr "Implementar ideias"
+
+#: app/templates/main.html:51
+msgid "Cooperation and healthy environment"
+msgstr "Cooperação e ambiente agradável"
+
+#: app/templates/main.html:62
+msgid "Get to know the communities we have at IEEE-IST Student Branch."
+msgstr ""
+"Fica a conhecer as comunidades que nós temos no IEEE-IST Student Branch."
+
+#: app/templates/main.html:77
+msgid "Want to join our team?"
+msgstr "Queres juntar-te à nossa equipa?"
+
+#: app/templates/main.html:79
+msgid "Join us!"
+msgstr "Junta-te a nós!"
+
+#: app/templates/main.html:87
+msgid "Upcoming Events"
+msgstr "Próximos Eventos"
+
+#: app/templates/main.html:127
+msgid "Latest News"
+msgstr "Últimas Notícias"
+
+#: app/templates/main.html:131 app/templates/specific_news.html.py:33
+msgid "View all news"
+msgstr "Ver todas"
+
+#: app/templates/page.html:23
+msgid "Latest News and Activities of"
+msgstr "Últimas Notícias e Actividades de"
+
+#: app/templates/page.html:26
+msgid "Find More"
+msgstr "Lê Mais"
+
+#: app/templates/past_boards.html:14
+msgid "Lets take a look at our foundations!"
+msgstr "Vamos olhar para as nossas origens!"
+
+#: app/validators.py:11
+msgid "Please upload a PDF file"
+msgstr "Por favor faça o upload de um ficheiro PDF"

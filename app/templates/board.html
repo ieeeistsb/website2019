@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extra_headers %}
+    <link href="{% static "css/board.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="intro-board">
+        <h1>{% trans "Meet our awesome board!" %}</h1>
+        <p>{% trans "We are passioned by engineering and highly motivated to work together." %}</p>
+    </div>
+<div class="row" style="padding-bottom: 30px; text-align: center;">
+  {% for b in board %}
+      <div class="box">
+          <div class="member">
+              <div class="figure"><img alt="{{ b.member.name }}" src="{{ b.member.image.url }}"></div>
+              <div class="social">
+                  <a class="fa fa-envelope-square" href="malito:{{ b.member.ieee_contact }}"></a>
+                  {% for s in b.member.socials.all %}
+                    <a href="{{ s.url }}">{{ s.render_icon|safe }}</a>
+                  {% endfor %}
+
+              </div>
+          </div>
+          <div class="info">
+              <h3>{{ b.member.name }}</h3>
+              <span>{{ b.role }}</span>
+          </div>
+      </div>
+  {% endfor %}
+</div>
+{% endblock %}

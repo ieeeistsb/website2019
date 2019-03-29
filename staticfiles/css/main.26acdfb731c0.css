@@ -1,0 +1,45 @@
+
+
+.communities-list {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+.communities-list li {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.communities-list a {
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #EEEEEE;
+    color: #347dba;
+    font-size: 1.3em;
+    display: block;
+}
+
+.communities-list a:hover {
+    background-color: #8bd1fe;
+    color: #EEEEEE;
+}
+
+
+
+#communities {
+    background-color: #2b669a;
+    padding-bottom: 40px;
+    padding-top: 15px;
+}
+
+#communities h2 {
+    font-weight: lighter;
+    color: #EEEEEE;
+}
+
+#communities p {
+    font-weight: lighter;
+    color: #EEEEEE;
+}

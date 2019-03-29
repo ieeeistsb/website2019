@@ -1,0 +1,174 @@
+.what-is-ieee {
+    background-image: url("../img/intro-bg-filtered.c2deb6a92555.jpg");
+    background-size: cover;
+    background-position: center;
+    font-weight: 300;
+}
+
+.what-is-ieee > div {
+    padding: 40px;
+}
+
+.what-is-ieee > div > div > img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 70%;
+
+}
+
+.what-is-ieee > div > div > h1 {
+    color: #f7f7f7;
+    padding-top: 10px;
+}
+
+.what-is-ieee > div > div > p {
+    color: #f7f7f7;
+}
+
+.regions {
+    padding: 30px;
+    font-weight: 300;
+}
+
+.regions > div > div > img {
+    width: 100%;
+}
+
+.regions > div > div > h1 {
+    color: #127091;
+}
+
+.why-join {
+    background: #7d7d7d;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.why-join > div{
+    padding: 10px;
+}
+
+.why-join > div > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.why-join > div > div > img {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-join > div > div > h1 {
+    color: #eeeeee;
+    text-align: center;
+}
+
+.why-join > div > div > h3 {
+    color: #eeeeee;
+}
+
+.why-join > div > div > p {
+    color: #eeeeee;
+    font-weight: 300;
+}
+
+
+.ieee-col-md-4 {
+    width: 33%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ieee-col-md-8 {
+    width: 66%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.awards {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.awards > div > div > span {
+    font-size: 100px;
+    color: #1485a9;
+    margin-top: 30px;
+}
+
+.awards > div > div > * {
+    display: block;
+    text-align: center;
+    font-weight: 300;
+}
+
+.awards > div > div > h1 {
+    font-weight: 400;
+    color: #127091;
+}
+
+@media (max-width: 750px) {
+
+    .what-is-ieee > div > div > h1 {
+        text-align: center;
+    }
+
+    .what-is-ieee > div > div > p {
+        text-align: justify;
+    }
+
+    .regions > div > div > h1 {
+        text-align: center;
+    }
+
+    .regions > div > div > p {
+        text-align: justify;
+    }
+
+    .ieee-col-md-4 {
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .ieee-col-md-8 {
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .ieee-col-md-4 > img {
+        display: block;
+        text-align: center;
+    }
+
+    .ieee-col-md-8 > h3 {
+        display: block;
+        text-align: center;
+    }
+
+    .ieee-col-md-8 > p {
+        text-align: center;
+    }
+
+    .full-width-div {
+        width: 100%;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 970px) {
+    .full-width-div {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+

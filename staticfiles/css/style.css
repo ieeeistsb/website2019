@@ -1,0 +1,343 @@
+
+body {
+    padding-top: 100px;
+}
+
+.logo {
+    height: 35px;
+    margin-top: -6px;
+    margin-left: 10px;
+}
+
+.brand-heading, .intro-text, .with-shadow {
+    text-shadow: 2px 2px 2px #222;
+}
+
+.copyright {
+    font-size: 10px;
+}
+
+.social-networks {
+    display: block;
+    text-align: center;
+    margin-left: -40px;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    margin-bottom: 10px;
+}
+
+.social-networks li {
+    display: inline;
+}
+
+.social-networks li a span {
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border: 1px solid white;
+    font-size: 20px;
+    line-height: 2em;
+}
+
+.social-networks li a:hover span {
+    background: white;
+    color: #08637d;
+}
+
+.icon-text {
+    color: #333;
+    margin-top: 5px;
+}
+
+.btn-join-us:hover {
+    background: #1395ba;
+    color: white;
+}
+
+.btn-all-news {
+    color: #1395ba;
+    border: 1px solid #1395ba;
+}
+
+.btn-all-news:hover {
+    background: #1395ba;
+    color: white;
+}
+
+.main-bar {
+    margin-top: 55px;
+}
+
+.sites-bar {
+    background: #ababab;
+    color: #505050;
+}
+
+.sites-bar a {
+    color: #505050 !important;
+}
+
+#navbar1 {
+    text-align: center;
+}
+
+#navbar1 ul {
+    float: none;
+    display: inline-block;
+}
+
+.news-row {
+    margin: 30px 0;
+}
+
+.news-row h3 {
+    padding-bottom: 2px;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    display: inline;
+    border-bottom: 2px solid #1395ba;
+}
+
+.news-date-div {
+    height: 180px;
+    text-align: center;
+}
+
+.news-date {
+    font-weight: lighter !important;
+    color: #1395ba !important;
+    font-size: 16px !important;
+    font-style: italic;
+    margin-bottom: 10px;
+    margin-top: 10px !important;
+}
+
+.news-wrap {
+    margin-top: 20px;
+}
+
+.news-image {
+    width: 90%;
+    margin: 30px 10px;
+}
+
+.hashtags {
+    height: 250px;
+    border-radius: 50%;
+    background: #cfcfcf;
+    font-size: 22px;
+}
+
+.hashtags ul {
+    -webkit-padding-start: 0px;
+    list-style-type: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.hashtags li {
+    color: #f0f0f0;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .center-titles {
+        display: block;
+        text-align: center;
+    }
+
+    .center-titles img {
+        display: block;
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .sites-bar {
+        z-index: 100000 !important;
+    }
+}
+
+#about h2 {
+    font-weight: lighter;
+}
+
+#about p {
+    font-weight: lighter;
+}
+
+
+.communities-officer img {
+    height: auto;
+    width: 100px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.communities-officer > div {
+    height: 100px;
+}
+
+.communities-officer .vertical {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.communities-officer span {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.communities-officer i {
+    font-weight: lighter;
+}
+
+.communities-body {
+    padding: 20px;
+    padding-left: 40px;
+}
+
+.contacts {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacts > div {
+    margin-bottom: 20px;
+}
+
+.contacts > div > div {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #dddddd;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-bottom: 5px;
+}
+
+.contacts > div > div:hover {
+    background: #1395ba;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.contacts > div > div:hover > span {
+    color: white;
+}
+
+.contacts span {
+    font-size: 80px;
+    width: 160px;
+    height: 160px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-25%);
+}
+
+.contacts > div > p {
+    margin: 0;
+    font-weight: lighter;
+}
+
+.contacts > div > p > a {
+    font-size: 16px;
+    margin: 0;
+}
+
+.news-content {
+    height: 125px;
+    overflow: hidden;
+}
+
+.read-more-news {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url("https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/more-256.png") no-repeat 90% 20px;
+    background-size: 50px;
+    opacity: 0.7;
+}
+
+.read-more-news:hover {
+    filter:drop-shadow(0px 0px 10px black);
+    -webkit-filter: drop-shadow(0px 0px 10px black);
+}
+
+.news-title {
+    text-align: center;
+    font-weight: lighter;
+    margin-top: 50px !important;
+}
+
+.news-search {
+    display: block;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.close-search {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    padding: 6px;
+    background: #bad4dc;
+    margin-top: 10px;
+}
+
+.news-search > form > div > button {
+    background-color: #aaaaaa;
+    border: 1px solid #aaaaaa;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+
+.news-search > form > div > button > i {
+    color: white;
+}
+
+.news-search > form > div > input {
+    border-radius: 0;
+    border: 1px solid #bbbbbb;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+.news-search > form > div > input:focus {
+    border: 1px solid #bbbbbb;
+    outline: #1395ba auto 2px;
+}
+
+.news-search > form > div > button:hover {
+    background-color: #1395ba;
+    border: 1px solid #1395ba;
+}
+
+.news-search > form > div > button:hover > i {
+    color: white;
+}
+
+
+

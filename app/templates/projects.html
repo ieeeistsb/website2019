@@ -1,0 +1,33 @@
+{% extends "page.html" %}
+
+{% block page_contents %}
+
+    {%  if object.coordinator != null %}
+    <div class="row" style="margin-top: 50px">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-4 col-xs-12" style="text-align: center">
+            <div style="width: 150px; height: 150px; margin: 0 auto; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; overflow: hidden">
+                <img style="height: 100%; width: 100%"
+                     alt="{{ object.coordinator.name }}" src="{{ object.coordinator.image.url }}">
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 center-titles">
+            <div style="height: 150px; position: relative; top: 50%; transform: translateY(-50%);">
+                <p style="margin-bottom: 0">{{ object.coordinator.name }}</p>
+                <p><a href="malito:{{ object.coordinator.ieee_contact }}">{{ object.coordinator.ieee_contact }}</a></p>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    {% endif %}
+
+    <div style="margin: 10px 20px;">
+        {{ object.info|safe }}
+    </div>
+
+
+{% endblock %}

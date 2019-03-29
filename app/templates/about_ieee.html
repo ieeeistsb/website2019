@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block extra_headers %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/aboutieee.css"%}" />
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid what-is-ieee">
+        <div class="row">
+            <div class="col-md-5">
+                <img src="{% static "img/ieee_mb_white.png" %}">
+            </div>
+            <div class="col-md-7">
+                <h1>{% trans "What is IEEE?" %}</h1>
+                <p>{% trans "IEEE is the world’s largest professional association dedicated to advancing <b>technological innovation</b> and excellence for the benefit of humanity." %}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container regions">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>{% trans "Where are we?" %}</h1>
+                <p>{% trans "We are divided into <b>10 regions worldwide</b>. Each region divided into <b>sections</b>. Each section has chapters, affinity groups and student branches." %}</p>
+                <p>{% trans "We are a student branch from <b>Portugal Section</b>." %}</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{% static "img/regions-map.png" %}">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid why-join">
+        <div class="row">
+            <div class="col-md-12 full-width-div">
+                <h1>{% trans "Why join IEEE?" %}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ieee-col-md-4">
+                <img src="{% static "img/about/brain.png" %}">
+            </div>
+            <div class="ieee-col-md-8">
+                <h3>{% trans "Vast number of opportunities to enrich your knowledge." %}</h3>
+                <p>{% trans "IEEE hosts a worldwide network of professionals and experts that can help shape your career." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ieee-col-md-4">
+                <img src="{% static "img/about/library.png" %}">
+            </div>
+            <div class="ieee-col-md-8">
+                <h3>{% trans "Access to digital libraries." %}</h3>
+                <p>{% trans "IEEEXplore contains the world's highest quality technical literature in engineering." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ieee-col-md-4">
+                <img src="{% static "img/about/competition.png" %}">
+            </div>
+            <div class="ieee-col-md-8">
+                <h3>{% trans "Access to international competitions." %}</h3>
+                <p>{% trans "Such as IEEEXtreme 24-hour programming competition and IEEE madC." %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ieee-col-md-4">
+                <img src="{% static "img/about/soft.png" %}">
+            </div>
+            <div class="ieee-col-md-8">
+                <h3>{% trans "Develop your soft-skills" %}</h3>
+                <p>{% trans "Organizing events and interacting with others will enhance your communication skills. " %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ieee-col-md-4">
+                <img src="{% static "img/about/team.png" %}">
+            </div>
+            <div class="ieee-col-md-8">
+                <h3>{% trans "Opportunity to work in teams." %}</h3>
+                <p>{% trans "Our activities are organized and planned in teams." %}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container awards">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{% trans "Awards" %}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <span class="fa fa-star"></span>
+                <h3>{% trans "IEEE-IST Student Branch Award" %}</h3>
+                <h4><i>{% trans "Region 8 Exemplary Student Branch Award" %}</i></h4>
+                <h4>2012-2013/2014-2015</h4>
+            </div>
+            <div class="col-md-4">
+                <span class="fa fa-star"></span>
+                <h3>{% trans "IEEE-IST Student Branch Award" %}</h3>
+                <h4><i>{% trans "IEEE-PT Outstanding Student Branch" %}</i></h4>
+                <h4>2014</h4>
+            </div>
+            <div class="col-md-4">
+                <span class="fa fa-star"></span>
+                <h3>{% trans "IEEE-IST Student Branch Award" %}</h3>
+                <h4><i>{% trans "Darrel Chong Award Bronze Level" %}</i></h4>
+                <h4>2016</h4>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

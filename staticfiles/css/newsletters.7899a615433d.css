@@ -1,0 +1,46 @@
+.newsletter-wrapper {
+    background-color: #2b669a;
+    padding-bottom: 15px;
+}
+
+.newsletter-title {
+    text-align: center;
+    color: #EEEEEE;
+}
+
+.newsletter-button {
+    width: 60%;
+    font-size: large;
+    color: white;
+    padding: 5px;
+    border: 1px solid #EEEEEE;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+}
+
+.newsletter-button:hover {
+    background-color: #EEEEEE;
+    color: #2b669a;
+    border: 1px solid transparent;
+}
+
+.newsletter-inside-title {
+    font-size: 0.9em;
+}
+
+.newsletter-subscribe {
+    color: #EEEEEE;
+    display: block;
+    text-align: center;
+}
+
+.newsletter-subscribe a {
+    color: #ABD2FA;
+}
+
+.newsletter-subscribe a:hover {
+    color: white;
+}

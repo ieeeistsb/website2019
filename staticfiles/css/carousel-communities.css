@@ -1,0 +1,12 @@
+.communities-carousel {
+    background-color: #444444;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 992px) {
+   .communities-carousel {
+        width: 100%;
+   }
+}

@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<script src="{% static "js/jquery.tagcanvas.min.js" %}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        {% for n in news %}
+            if (!$('#news-{{ n.id }}').tagcanvas({
+                        textColour: '#263238',
+                        outlineThickness: 1,
+                        maxSpeed: 0.1,
+                        shape: 'sphere',
+                        zoomMin: 1,
+                        zoomMax: 1,
+                        depth: 0.3
+                    }, 'tags-{{ n.id }}')) {
+                // TagCanvas failed to load
+                $('#container-{{ n.id }}').hide();
+            }
+        {% endfor %}
+    });
+</script>
+<div class="container">
+    {% for n in news %}
+        <div class="row news-row">
+            <div class="col-md-4" style="text-align: center">
+                <div id="container-{{ n.id }}">
+                    <canvas width="250" height="250" id="news-{{ n.id }}"
+                            style="background: #CFD8DC; border-radius: 50%">
+                        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+                    </canvas>
+                </div>
+                <div id="tags-{{ n.id }}">
+                    <ul>
+                        {% for tag in n.tags.all %}
+                            <li><a href="{% url 'search' %}?q={{ tag.get_nohashtag }}" style="pointer-events: none; cursor: default;">{{ tag.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!--<div class="hashtags">
+                    <ul class="news-tags">
+                        {% for tag in n.tags.all %}
+                            <li>{{ tag.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>-->
+            </div>
+            <div class="col-md-8">
+                <a href="{% url "specific_news" n.id %}" style="color: initial">
+                    <div class="news-wrap center-titles">
+                        <h3>{{ n.get_title }}</h3>
+                        <p class="news-date">{{ n.date|date:"M d, Y" }}</p>
+                    </div>
+                    <div class="read-more-news"></div>
+                    <div class="news-content markdown">
+                        {{ n.get_html_content|safe }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

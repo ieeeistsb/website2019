@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load utils %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block extra_headers %}
+    <link href="{% static "css/initiative_page.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="image-title-community"
+         style="background-image: url({% if object.community.image %}{{ object.community.image.url }}{% endif %})">
+        <div class="fill"></div>
+        <div class="title"><h1><a
+                href="{% url "community" object.community.get_short_lower_name %}">{{ object.community.name }}</a></h1>
+        </div>
+    </div>
+    <div class="initiative-content">
+        <div class="image-title-initiative"
+             style="background-image: url({% if object.image %}{{ object.image.url }}{% endif %})">
+            <div class="title"><h1>{{ object.get_title }}</h1></div>
+        </div>
+        <div class="content">
+            <div class="markdown communities-body">
+                {{ object.get_ckeditor_content|safe }}
+            </div>
+            <div class="initive-list">
+                <div class="initiative-list-container"
+                     style="width: calc({{ object.community.get_initiatives|length }}*170px)">
+                    {% for initiative in object.community.get_initiatives %}
+                        <a class="initive-list-object {% if initiative == object %}active{% endif %}"
+                           href="{% if initiative == object %}#{% else %}{% url 'initiative'  initiative.get_short_lower_name %}{% endif %}">
+                            <div class="initiative-image-nav"
+                                 {% if initiative.image %}style="background-image: url({{ initiative.image.url }})"{% endif %}></div>
+                            <span>{{ initiative.get_title }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

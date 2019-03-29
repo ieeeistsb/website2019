@@ -1,0 +1,20 @@
+<div style="display: block; text-align: center;">
+    <ul class="pagination">
+    {% if paginator.pages|length > 1 %}
+        {% for page in paginator.pages %}
+            {% if page %}
+                {% ifequal page paginator.number %}
+                    <li class="active"><a href="#">{{ page }}</a></li>
+                {% else %}
+                    <li><a href="?{{ page.querystring }}">{{ page }}</a></li>
+                {% endifequal %}
+            {% else %}
+                <li class="disabled"><a href="#">...</a></li>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {# Do not present pagination when there is only one page #}
+    {% endif %}
+
+</ul>
+</div>

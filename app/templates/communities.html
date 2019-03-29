@@ -1,0 +1,139 @@
+{% extends "page.html" %}
+{% load utils %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block extra_scripts %}
+    <script src="{% static "js/galleria/galleria-1.5.1.min.js" %}"></script>
+    {% if object.get_photo_album %}
+    <script>
+        $(document).ready(function () {
+            Galleria.loadTheme("{% static "js/galleria/themes/classic/galleria.classic.min.js" %}");
+            Galleria.run(".galleria");
+        });
+    </script>
+    {% endif %}
+{% endblock %}
+
+{% block page_contents %}
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <div class="markdown communities-body">
+                {{ object.get_html_info|safe }}
+            </div>
+        </div>
+    </div>
+
+
+    {% if object.initiative_set.all %}
+        <div class="row initiatives-row">
+            <div class="col-md-12">
+                <h2 class="initiatives-title">{% trans "Initiatives" %}</h2>
+                <div class="initiatives-wrapper">
+                    {% for ini in object.initiative_set.all %}
+                        <a href="{% url "initiative" ini.get_short_lower_name %}" class="initiative-container">
+                            <div class="initiative-image"
+                                 {% if ini.image %}style="background-image: url({{ ini.image.url }})"{% endif %}></div>
+                            <span>{{ ini.get_title }}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if object.get_newsletters %}
+        <div class="row newsletter-wrapper">
+            <div class="col-md-12">
+                <h2 class="newsletter-title">{% trans "Newsletters" %}</h2>
+                {% if object.newsletter_subscribe_url %}
+                    <span class="newsletter-subscribe">{% trans "Subscribe to our newsletter" %} <a
+                            href="{{ object.newsletter_subscribe_url }}">{% trans "here" %}</a>!</span>
+                {% endif %}
+                <div class="row">
+                    {% for newsletter in object.get_newsletters %}
+                        <div class="col-md-12">
+                            <a href="{{ newsletter.url }}"
+                               class="newsletter-button">{{ newsletter.publish_date|date:"M d, Y" }} |
+                                {% trans "Newsletter" %} #{{ newsletter.get_edition }} -
+                                <span class="newsletter-inside-title">{{ newsletter.get_title }}</span></a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
+    {% endif %}
+
+    {% if object.get_photo_album %}
+        <h2 align="center" style="margin-bottom: 10px;">{% trans "Photos" %}</h2>
+        <span style="text-align: center; display: block; font-weight: lighter; margin-bottom: 15px">
+            {% trans "Check out our photo gallery." %}</span>
+        <div class="galleria" style="width: 80%; height: 500px; margin-left: auto; margin-right: auto">
+            {% for photo in object.get_photo_album %}
+                <img src="{{ photo }}" alt="Photo {{ forloop.counter }}">
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+    {% if object.chair %}{% set cs = object.chair.all %}{% set title = "Chair" %}
+        {% else %}{% set cs = object.coordinator.all %}{% set title = "Coordinator" %}
+    {% endif %}
+    <div class="row">
+        <div style="display: block; text-align: center">
+            {% for c in cs %}
+                <div class="box">
+                    <div class="member">
+                        <div class="figure-smaller"><img alt="{{ c.name }}" src="{{ c.image.url }}"></div>
+                        <div class="social-smaller">
+                            <a class="fa fa-envelope-square" href="malito:{{ c.ieee_contact }}"></a>
+                            {% for s in c.socials.all %}
+                                <a href="{{ s.url }}">{{ s.render_icon|safe }}</a>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <div class="info-closer">
+                        <h3>{{ c.name }}</h3>
+                        <span>{% trans title %}</span>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% for vc in object.vice_chair.all %}
+                <div class="box">
+                    <div class="member">
+                        <div class="figure-smaller"><img alt="{{ vc.name }}" src="{{ vc.image.url }}"></div>
+                        <div class="social-smaller">
+                            <a class="fa fa-envelope-square" href="malito:{{ vc.ieee_contact }}"></a>
+                            {% for s in vc.socials.all %}
+                                <a href="{{ s.url }}">{{ s.render_icon|safe }}</a>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <div class="info-closer">
+                        <h3> {{ vc.name }}</h3>
+                        <span>{% trans "Vice-Chair" %}</span>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% if object.vice_chair %}
+
+            {% endif %}
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block extrajs %}
+    jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+    window.document.location = $(this).data("href");
+    });
+    });
+{% endblock %}

@@ -1,0 +1,180 @@
+{% load static from staticfiles %}
+{% load lang_utils %}
+{% load load_objects %}
+{% load i18n %}
+
+{% get_all_projects as projects %}
+{% get_all_communities as communities %}
+{% get_branch_socials as social_networks %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_language_info for LANGUAGE_CODE as lang %}
+{% get_available_languages as LANGUAGES %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IEEE-IST Student Branch</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "css/grayscale.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <link href="{% static "css/markdown.css" %}" rel="stylesheet">
+    <link href="{% static "css/flag-css.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/jquery-ui.min.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600' rel='stylesheet' type='text/css'>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAKctdC0plCH1D-T7YYnOzbmXvCZoIrTc&sensor=false"></script>
+
+
+    <script src="{% static "js/jquery-1.12.3.min.js" %}"></script>
+    <script src="{% static "js/jquery.easing.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/grayscale.js" %}"></script>
+    <script src="{% static "js/jquery-ui.min.js" %}"></script>
+    {% block extra_headers %}
+    {% endblock %}
+
+    {% block extra_scripts %}
+    {% endblock %}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top sites-bar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar1" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://ieee.org">IEEE.org</a></li>
+                <li><a href="http://ieeexplore.ieee.org/Xplore/home.jsp">IEEE Xplore Digital</a></li>
+                <li><a href="http://standards.ieee.org/">IEEE Standards</a></li>
+                <li><a href="http://spectrum.ieee.org/">IEEE Spectrum</a></li>
+                <li><a href="http://www.ieee.org/sitemap.html">{% trans "More sites" %}</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top main-bar" style="margin-top: 50px;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url "landing" %}">
+                <img src="{% static "img/ieeeistlogo.png" %}" class="logo">
+            </a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url "landing" %}">Home</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">{% trans "About us" %} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'about_ieee' %}">IEEE</a></li>
+                    <li><a href="{% url 'board' %}">{% trans "Board" %}</a></li>
+                    <li><a href="{% url 'previous_boards' %}">{% trans "Previous boards" %}</a></li>
+                    <li><a href="{% url 'contacts' %}">{% trans "Contacts" %}</a></li>
+                </ul>
+              </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="false">{% trans "Communities" %} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    {% for c in communities %}
+                        <li><a href="{% url "community" c.get_short_lower_name%}">{{ c.get_short_name }}</a></li>
+                    {% endfor %}
+                </ul>
+              </li>
+                 <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">{% trans "Projects & Activities" %} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    {% for p in projects %}
+                        <li><a href="{% url "project" p.get_short_lower_name%}">{{ p.name }}</a></li>
+                    {% endfor %}
+                </ul>
+              </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="flag flag-1x flag-{{ LANGUAGE_CODE }}" style="height: 15px; margin-right: 5px;"></span> {{ lang.name_local }}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {% for l in LANGUAGES %}
+                                {% if not l.0 == LANGUAGE_CODE %}
+                                    <li>
+                                        <a href="{% change_lang  l.0 %}">
+                                        <span class="flag flag-1x flag-{{ l.0 }}" style="height: 15px !important; margin-right: 5px;"></span>
+                                            {{ l.0|language_name_local }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                </li>
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <ul class="social-networks">
+            {% for sn in social_networks %}
+                <li><a href="{{ sn.url }}">{{ sn.render_icon|safe }}</a></li>
+            {% endfor %}
+        </ul>
+            <p class="copyright" style="font-size: 12px;">Copyright &copy; IEEE-IST Student Branch {% now "Y" %}</p>
+        </div>
+    </footer>
+
+    <script>
+        $( ".accordion-ieee" ).accordion({
+            collapsible: true
+        });
+        {% block extrajs %}
+        {% endblock %}
+    </script>
+
+</body>
+
+</html>
