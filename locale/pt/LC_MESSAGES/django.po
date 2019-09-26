@@ -168,8 +168,8 @@ msgid "Contacts"
 msgstr "Contactos"
 
 #: app/templates/base.html:116 app/templates/main.html.py:61
-msgid "Communities"
-msgstr "Comunidades"
+msgid "Chapters"
+msgstr "Chapters"
 
 #: app/templates/base.html:125
 msgid "Projects & Activities"
@@ -281,9 +281,9 @@ msgid "Cooperation and healthy environment"
 msgstr "Cooperação e ambiente agradável"
 
 #: app/templates/main.html:62
-msgid "Get to know the communities we have at IEEE-IST Student Branch."
+msgid "Get to know the chapters we have at IEEE-IST Student Branch."
 msgstr ""
-"Fica a conhecer as comunidades que nós temos no IEEE-IST Student Branch."
+"Fica a conhecer os chapters que nós temos no IEEE-IST Student Branch."
 
 #: app/templates/main.html:77
 msgid "Want to join our team?"

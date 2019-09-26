@@ -113,7 +113,7 @@
               </li>
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                   aria-haspopup="true" aria-expanded="false">{% trans "Communities" %} <span class="caret"></span></a>
+                   aria-haspopup="true" aria-expanded="false">{% trans "Chapters" %} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     {% for c in communities %}
                         <li><a href="{% url "community" c.get_short_lower_name%}">{{ c.get_short_name }}</a></li>

@@ -58,8 +58,8 @@
     <section id="communities" class="text-center">
         <div class="container">
             <div class="row">
-                <h2>{% trans "Communities" %}</h2>
-                <p>{% trans "Get to know the communities we have at IEEE-IST Student Branch." %}</p>
+                <h2>{% trans "Chapters" %}</h2>
+                <p>{% trans "Get to know the chapters we have at IEEE-IST Student Branch." %}</p>
                 <ul class="communities-list">
                     {% for community in communities %}
                         <li><a href="{% url "community" community.get_short_lower_name %}">{{ community.get_short_name }}</a></li>
