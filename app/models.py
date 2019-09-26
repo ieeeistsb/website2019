@@ -273,6 +273,11 @@ class TeamMember(models.Model):
     member = models.ForeignKey(Volunteer)
     team = models.ForeignKey(Team)
 
+    def full_name(self):
+        return self.member.name
+
+    name = property(full_name)
+
     class Meta:
         verbose_name_plural = "Team Members"
 
