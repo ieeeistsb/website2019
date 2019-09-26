@@ -52,7 +52,7 @@ class TranslatableTitle(models.Model):
     title = models.CharField(max_length=100)
     title_pt = models.CharField(max_length=100)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     @classmethod
@@ -98,7 +98,7 @@ class TranslatableUniqueTitle(models.Model):
     title = models.CharField(max_length=100, unique=True)
     title_pt = models.CharField(max_length=100, unique=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     @classmethod
@@ -151,7 +151,7 @@ class SocialNetwork(models.Model):
             return '<a href="%s" class="fa fa-%s-square"></a>' % (self.url, self.name)
         return ''
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s with url %s" % (self.name, self.url)
 
 
@@ -161,7 +161,7 @@ class Volunteer(models.Model):
     socials = models.ManyToManyField(SocialNetwork, blank=True)
     image = models.ImageField(upload_to=path_volunteers)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -218,7 +218,7 @@ class Community(models.Model):
     def get_initiatives(self):
         return list(Initiative.objects.filter(community__name=self.name))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -257,15 +257,14 @@ class Projects(models.Model):
     def get_html_info(self):
         return markdown.markdown(load_translated_field(self, 'info'), output_format='html5')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
-
 
 class Team(models.Model):
     begin_year = models.IntegerField()
     end_year = models.IntegerField()
 
-    def __unicode__(self):
+    def __str__(self):
         return str(self.begin_year) + "/" + str(self.end_year)
 
 
@@ -277,14 +276,14 @@ class TeamMember(models.Model):
     class Meta:
         verbose_name_plural = "Team Members"
 
-    def __unicode__(self):
-        return "%s - %s with role %s" % (self.team.__unicode__(), self.member.name, self.role)
+    def __str__(self):
+        return "%s - %s with role %s" % (self.team.__str__(), self.member.name, self.role)
 
 
 class Tag(models.Model):
     name = models.CharField(max_length=50)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_nohashtag(self):
@@ -299,7 +298,7 @@ class News(TranslatableTitle, TranslatableContent):
     class Meta:
         verbose_name_plural = "News"
 
-    def __unicode__(self):
+    def __str__(self):
         return "[%s] - %s" % (str(self.date), self.title)
 
     def get_html_content(self):
@@ -314,7 +313,7 @@ class Partner(models.Model):
     name = models.CharField(max_length=128)
     image = models.ImageField(upload_to=path_initiatives)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -336,19 +335,17 @@ class Initiative(TranslatableUniqueTitle, TranslatableContent):
     def get_html_info(self):
         return markdown.markdown(load_translated_field(self, 'content'), output_format='html5')
 
-
 class InitiativeEvent(TranslatableContent, TranslatableTitle):
     image = models.ImageField(upload_to=path_partners)
     date = models.DateTimeField()
     initiative = models.ForeignKey(Initiative)
     facebook = models.URLField(blank=True, null=True)
 
-    def __unicode__(self):
-        return self.initiative.__unicode__()
+    def __str__(self):
+        return self.initiative.__str__()
 
     def get_html_info(self):
         return markdown.markdown(load_translated_field(self, 'content'), output_format='html5')
-
 
 class Newsletter(TranslatableTitle):
     created = models.DateTimeField(auto_now_add=True)
@@ -357,7 +354,7 @@ class Newsletter(TranslatableTitle):
                            blank=False, null=False)
     community = models.ForeignKey(Community, blank=False, null=False)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.get_title()
 
     def get_edition(self):

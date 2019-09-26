@@ -28,13 +28,17 @@ class ContentForm(forms.ModelForm):
 
 
 admin_site = IEEISTAdminSite()
-
 admin_site.register(SocialNetwork)
 admin_site.register(Volunteer)
 admin_site.register(Community)
 admin_site.register(Projects)
 admin_site.register(Team)
-admin_site.register(TeamMember)
+
+class TeamMemberAdmin(admin.ModelAdmin):
+    list_display = ('name', 'role',)
+
+admin_site.register(TeamMember, TeamMemberAdmin)
+
 admin_site.register(News)
 admin_site.register(Tag)
 
@@ -50,9 +54,9 @@ class InitiativeAdmin(admin.ModelAdmin):
 
 
 admin_site.register(Initiative, InitiativeAdmin)
+
 admin_site.register(InitiativeEvent)
 admin_site.register(Partner)
 admin_site.register(Newsletter)
-
 admin_site.register(User)
 admin_site.register(Group)
