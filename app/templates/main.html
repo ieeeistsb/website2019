@@ -62,7 +62,7 @@
                 <p>{% trans "Get to know the chapters we have at IEEE-IST Student Branch." %}</p>
                 <ul class="communities-list">
                     {% for community in communities %}
-                        <li><a href="{% url "community" community.get_short_lower_name %}">{{ community.get_short_name }}</a></li>
+                        <li><a href="{% url "chapter" community.get_short_lower_name %}">{{ community.get_short_name }}</a></li>
                     {% endfor %}
                 </ul>
             </div>

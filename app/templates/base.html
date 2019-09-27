@@ -116,7 +116,7 @@
                    aria-haspopup="true" aria-expanded="false">{% trans "Chapters" %} <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     {% for c in communities %}
-                        <li><a href="{% url "community" c.get_short_lower_name%}">{{ c.get_short_name }}</a></li>
+                        <li><a href="{% url "chapter" c.get_short_lower_name%}">{{ c.get_short_name }}</a></li>
                     {% endfor %}
                 </ul>
               </li>
