@@ -10,7 +10,7 @@ ecdsa==0.13
 facebook-sdk==2.0.0
 idna==2.6
 Markdown==2.6.11
-Pillow==5.0.0
+Pillow==9.0.0
 requests==2.18.4
 six==1.11.0
 sqlparse==0.2.4
